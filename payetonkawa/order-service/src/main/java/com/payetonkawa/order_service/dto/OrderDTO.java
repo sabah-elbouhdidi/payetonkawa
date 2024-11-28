@@ -1,27 +1,20 @@
-package com.payetonkawa.order_service.entity;
+package com.payetonkawa.order_service.dto;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
-
-import java.util.List;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
-@Entity
-@Data
 @SuperBuilder
-@NoArgsConstructor
+@Data
 @AllArgsConstructor
-@Table(name = "`order`")
-public class Order{
-
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long id;
+@NoArgsConstructor
+public class OrderDTO {
+    private Long idOrder;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
@@ -32,6 +25,5 @@ public class Order{
 
     private String status;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<OrderedProduct> product;
+    private List<OrderedProductDTO> productsDTO;
 }
