@@ -26,8 +26,8 @@
 		<module>order-service</module>
 		<module>customer-service</module>
         <module>discoveryService</module>
-        <module>apiGateway</module>
-    </modules>
+		<module>apiGateway</module>
+	</modules>
     <scm>
 		<connection/>
 		<developerConnection/>
