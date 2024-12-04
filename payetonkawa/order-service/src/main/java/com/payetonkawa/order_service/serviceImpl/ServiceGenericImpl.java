@@ -1,8 +1,9 @@
-package com.payetonkawa.customer_service.serviceImpl;
+package com.payetonkawa.order_service.serviceImpl;
 
-import com.payetonkawa.customer_service.repository.GenericRepository;
-import com.payetonkawa.customer_service.service.GenericService;
-import com.payetonkawa.customer_service.transformer.Transformer;
+
+import com.payetonkawa.order_service.repository.GenericRepository;
+import com.payetonkawa.order_service.service.GenericService;
+import com.payetonkawa.order_service.transformer.Transformer;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -29,20 +30,20 @@ public class ServiceGenericImpl <DTO,Entity> implements GenericService<DTO> {
     }
 
     @Override
+    public void delete(Long id) throws Exception {
+        genericRepository.deleteById(id);
+    }
+
+    @Override
     public void add(DTO dto) throws Exception {
         genericRepository.save(transformer.fromDtoToEntity(dto));
     }
 
     @Override
-    public void addList(List<DTO> DTOList) throws Exception {
-        for (DTO dto : DTOList) {
+    public void addList(List<DTO> dtoList) throws Exception {
+        for (DTO dto : dtoList) {
             this.add(dto);
         }
-    }
-
-    @Override
-    public void delete(Long id) throws Exception {
-        genericRepository.deleteById(id);
     }
 
 }

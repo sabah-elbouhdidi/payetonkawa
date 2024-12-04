@@ -5,7 +5,6 @@ import com.payetonkawa.customer_service.entity.Address;
 import com.payetonkawa.customer_service.entity.Customer;
 import com.payetonkawa.customer_service.repository.AddressRepository;
 import com.payetonkawa.customer_service.repository.CustomerRepository;
-import com.payetonkawa.customer_service.service.AddressService;
 import com.payetonkawa.customer_service.service.CompanyService;
 import com.payetonkawa.customer_service.service.CustomerService;
 import com.payetonkawa.customer_service.transformer.AddressTransformer;
