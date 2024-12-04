@@ -4,10 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.CreationTimestamp;
-
-import java.sql.Time;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Data
@@ -28,11 +25,11 @@ public class Customer{
     private String firstName;
     private String lastName;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "company_id", referencedColumnName = "id")
     private Company company;
 
